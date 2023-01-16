@@ -38,7 +38,7 @@ endif()
 
 # Configure C++11 support for non windows compilers
 if (CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang" )
-	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11" )
+	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17" )
 endif()
 
 
@@ -90,8 +90,8 @@ if ( CUDA_FOUND )
 		if ( NOT MIN_ARCH )
 			set( MIN_ARCH 300 )
 		endif()
-		set( NV_SM "${NV_SM} -gencode arch=compute_30,code=sm_30 -gencode arch=compute_35,code=sm_35" )
-		set( NV_COMP        "-gencode arch=compute_35,code=compute_35" )
+		set( NV_SM "${NV_SM} -gencode arch=compute_50,code=sm_50 -gencode arch=compute_50,code=sm_50" )
+		set( NV_COMP        "-gencode arch=compute_50,code=compute_50" )
 		message( "   compile for CUDA arch 3.x (Kepler)" )
 	endif()
 	
